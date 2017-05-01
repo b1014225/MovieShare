@@ -1,0 +1,19 @@
+<ul>
+  <li>
+ユーザー名：<%=@user.name%>
+</li>
+<li>
+email:<%=@user.email%>
+</li>
+</ul>
+<ul>
+<% @texts.each_with_index do |text,i|%>
+<li>
+  <%="#{i+1}番"%>
+</li>
+<li>
+映画名：<%=text.title%><br>
+内容：<%=text.content%>
+</li>
+<%end%>
+</ul>

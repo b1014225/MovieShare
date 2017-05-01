@@ -1,0 +1,8 @@
+<h1>投稿を編集！！</h1>
+
+<%= form_tag update_path(@text.id),method:'patch' do%>
+<%=text_field_tag :title,@text.title%>
+<%=text_area_tag :content,@text.content%>
+<p>※140文字以内で書いてください</p>
+<%=submit_tag '編集完了！'%>
+<%end%>

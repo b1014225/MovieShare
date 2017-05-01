@@ -1,0 +1,11 @@
+
+<p class="notice_color"><%=notice%></p>
+<h2>映画名</h2>
+<%=@text.title%>
+<h2>内容</h2>
+<%=@text.content%>
+
+<%= link_to '編集',edit_path(@text.id)%>
+<%=link_to '削除',delete_path(@text.id) ,method:'delete',"data-confirm" => "本当に削除しますか？"%>
+
+<%=link_to 'ホームに戻る',index_path%>

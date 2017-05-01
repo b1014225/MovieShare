@@ -1,0 +1,34 @@
+
+<h1>新規ユーザー登録</h1>
+
+<%if @user.errors.any?%>
+<ul>
+<%@user.errors.full_messages.each do |message|%>
+<li class="errors_color">
+※<%=message%>
+</li>
+<%end%>
+</ul>
+<h4 class="errors_color">エラー数：<%=@user.errors.count%></h4>
+
+<%end%>
+
+
+<%= form_tag ( user_create_path :multipart =>true) do%>
+<ul>
+  <li>
+名前：<%=text_field_tag :name,@user.name%>
+</li>
+<li>
+メールアドレス：<%=text_field_tag :email,@user.email%>
+</li>
+<!--
+<li>
+プロフィール画像：<%=file_field_tag :image%>
+</li>
+<li>
+-->
+<%=submit_tag '新規作成'%>
+</li>
+</ul>
+<%end%>

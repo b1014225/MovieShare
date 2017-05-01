@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+    body{
+      font-family:'小塚ゴシック Pro6N R','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック', Arial, sans-serif;
+    }
+    </style>
+  </head>
+
+  <body>
+
+    <div id="header">
+
+      <div class="container">
+
+        <div id ="top-btn" class="header-left">
+          <img id="logo" src="images/">
+          <%= link_to 'Index', index_path,class:'logotext'%>
+
+        </div>
+        <div class="header-right">
+
+        <ul>
+          <li >
+            
+            <%= link_to '投稿', add_path%>
+          </li>
+          <li >
+            <a class="" href="#">検索</a>
+          </li>
+          <li >
+            <%=link_to 'プロフィール', user_show_path%>
+          
+          </li>
+          <li >
+            <a class="" href="#">ログアウト</a>
+          </li>
+
+
+        </ul>
+        </div>
+
+
+      </div>
+
+    </div>
+    <%= yield %>
+
+    <div id='footer'></div>
+  </body>
+</html>

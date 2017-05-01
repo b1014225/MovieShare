@@ -1,0 +1,15 @@
+<h1>ここに、全ユーザーの投稿を表示</h1>
+<p class="notice_color"><%=notice%>
+  <ul>
+<% @text.each do |text| %>
+<h3>映画名</h3>
+<li>
+<%=text.user_id%>
+<!--<%=@user=User.where(id:text.user_id)%>
+<%=@user.name%>-->
+</li>
+
+<%=text.title%>
+<%= link_to '→', detail_path(text.id)%>
+<%end%>
+</ul>

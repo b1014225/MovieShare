@@ -1,0 +1,33 @@
+<h1>ここに、新規投稿</h1>
+<%if @text.errors.any?%>
+<ul>
+<%@text.errors.full_messages.each do |message|%>
+<li class="errors_color">
+※<%=message%>
+</li>
+<%end%>
+</ul>
+<h4 class="errors_color">エラー数：<%=@text.errors.count%></h4>
+
+<%end%>
+<%= form_tag index_path do%>
+<ul>
+  <li>
+    <%=collection_select :text,:user_id,User.all,:id,:name,prompt: '選択して下さい。'%>
+  </li>
+  <li>
+    <h3>映画の名前</h3>
+<%=text_field_tag :title,@text.title%>
+</li>
+<li>
+  <h3>簡単な内容</h3>
+<%=text_area_tag :content,@text.content%>
+</li>
+<li>
+<p>※140文字以内で書いてください</p>
+</li>
+<li>
+<input type='submit' value='投稿♡'></input>
+</li>
+<ul>
+<%end%>
